@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+Route::post('/login', [App\Http\Controllers\UserController::class, 'authenticate'])->name('login');
+
+    Route::group(['middleware' => ['jwt.verify']], function() {
+        Route::get('product_list', [App\Http\Controllers\UserController::class, 'product_list']);
+
+    });
+
+    

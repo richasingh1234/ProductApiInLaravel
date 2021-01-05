@@ -20,13 +20,33 @@ class ProductSeeder extends Seeder
     {
         
         DB::table('products')->insert([
-            'name' => Str::random(10),
+            'name' => 'T-Shirt',
             'image' => Str::random(10).'.png',
-            'isDeleted' => 1,
+            'isDeleted' => '1',
             'price' => rand(5000,1000000),
             'sku' => Str::random(10),
             'mrp_price' => rand(5000,1000000),
-            'brandId' => 1,
+            'brand_id' => 1,
+        ]);
+
+        DB::table('products')->insert([
+            'name' => 'Jeans',
+            'image' => Str::random(10).'.png',
+            'isDeleted' => '0',
+            'price' => rand(5000,1000000),
+            'sku' => Str::random(10),
+            'mrp_price' => rand(5000,1000000),
+            'brand_id' => 1,
+        ]);
+
+        DB::table('products')->insert([
+            'name' => 'Makeup',
+            'image' => Str::random(10).'.png',
+            'isDeleted' => '0',
+            'price' => rand(5000,1000000),
+            'sku' => Str::random(10),
+            'mrp_price' => rand(5000,1000000),
+            'brand_id' => 1,
         ]);
     }
 }

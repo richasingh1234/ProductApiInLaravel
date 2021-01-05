@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         // Model::unguard();
 
 
-        User::factory(10)->create();
+        User::factory(1)->create();
         //  Brand::factory(10)->create();
 
         $this->call([

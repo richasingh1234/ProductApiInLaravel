@@ -22,8 +22,8 @@ class CreateProductsTable extends Migration
             $table->string('image');
             $table->timestamps();
             $table->softDeletes();
-            $table->unsignedInteger('brandId');
-            $table->foreign('brandId')->references('id')->on('brands')->nullable()->constrained();
+            $table->unsignedInteger('brand_id');
+            $table->foreign('brand_id')->references('id')->on('brands')->nullable()->constrained();
             $table->enum('isDeleted', array('1','0'))->nullable();
         });
     }

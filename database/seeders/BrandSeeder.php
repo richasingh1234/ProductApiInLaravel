@@ -16,10 +16,10 @@ class BrandSeeder extends Seeder
     public function run()
     {
         DB::table('brands')->insert([
-            'name' => Str::random(10),
+            'name' => 'Roadster',
             'image' => Str::random(10).'.png',
             'createdBy' => 1,
-            'isDeleted' => 1,
+            'isDeleted' => '0',
             
         ]);
     }
