@@ -46,10 +46,5 @@ class User extends Authenticatable
  *
  * @return void
  */
-public function run()
-{
-    User::factory()
-            ->times(50)
-            ->create();
-}
+
 }

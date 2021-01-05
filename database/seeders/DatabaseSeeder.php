@@ -2,7 +2,11 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\User;
+use App\Models\Brand;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,9 +17,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        
+        // Model::unguard();
+
+
+        User::factory(10)->create();
+        //  Brand::factory(10)->create();
+
         $this->call([
-            UserSeeder::class,
+            // UserSeeder::class,
+            BrandSeeder::class,
+            ProductSeeder::class,
+            
         ]);
+        //  factory(ProductFactory::class, 100)->create();
+
+
+        // Model::reguard();
+
     }
 }

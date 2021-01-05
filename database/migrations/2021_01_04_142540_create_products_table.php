@@ -17,13 +17,13 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('sku');
-            $table->tinyInteger('price');
-            $table->tinyInteger('mrp_price');
+            $table->mediumInteger('price');
+            $table->mediumInteger('mrp_price');
             $table->string('image');
             $table->timestamps();
             $table->softDeletes();
             $table->unsignedInteger('brandId');
-            $table->foreign('brandId')->references('id')->on('brand')->nullable()->constrained();
+            $table->foreign('brandId')->references('id')->on('brands')->nullable()->constrained();
             $table->enum('isDeleted', array('1','0'))->nullable();
         });
     }
